@@ -10,8 +10,9 @@ def result(code):
     
     prompt = f"""You are an expert Python developer. Please review the following code for bugs, errors, or inefficiencies:
     code is: {code}
-    Provide bug report and fixed code only."""
+    Provide bug report and fixed code."""
     response = model.generate_content(prompt)
+    print(response.text)
     return response.text
 
 @app.route('/', methods=['GET', 'POST'])
